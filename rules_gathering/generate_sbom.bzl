@@ -46,7 +46,6 @@ def _generate_sbom_impl(ctx):
         executable = ctx.executable._sbom_generator,
         arguments = [args],
     )
-    outputs.append(licenses_file)  # also make the json file available.
     return [DefaultInfo(files = depset(outputs))]
 
 _generate_sbom = rule(
